@@ -1,34 +1,58 @@
 import User from '../models/user.js';
+import jwt from 'jsonwebtoken';
+import argon2 from 'argon2';
 
 export const postRegister = async (req, res, next) => {
-    console.log(req.body);
-    const email = req.body.email;
-    const password = req.body.password;
+    const { email, password } = req.body;
+    const hashedPassword = await argon2.hash(password);
     
     try {
-        await register(email, password);
-        res.json({
+        const user = new User({
+            email: email,
+            password: hashedPassword
+        });
+        await user.save();
+        const token = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h'});
+
+        res.status(201).json({
             user: {
-                id: 'something',
+                id: user._id,
                 email: email,
             },
-            token: 'something here too'
+            token: token
         });
     } catch (error) {
         console.log(error);
     }
 };
 
-export const postLogin = (req, res, next) => {
-    res.json({
-        text: 'login WIP'
-    });
-};
+export const postLogin = async (req, res, next) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email })
 
-async function register(email, password) {
-    const user = new User({
-        email: email,
-        password: password
-    });
-    await user.save();
-}
+    if (!user) {
+        return res.status(404).json({
+            error: 'User not found'
+        });
+    }
+
+    try {
+        const isPasswordValid = await argon2.verify(user.password, password);
+        if (!isPasswordValid) {
+            return res.status(401).json({
+                error: 'Incorrect password'
+            });
+        }
+
+        const token = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h'});
+        res.json({
+            user: {
+                id: user._id,
+                email: email,
+            },
+            token: token
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
