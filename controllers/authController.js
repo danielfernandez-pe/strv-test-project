@@ -1,6 +1,7 @@
 import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
 import argon2 from 'argon2';
+import logger from '../utils/logger.js';
 
 export const postRegister = async (req, res, next) => {
     const { email, password } = req.body;
@@ -28,7 +29,7 @@ export const postRegister = async (req, res, next) => {
                 error: 'Email already in use. Please choose a different email address'
             });
         } else {
-            console.log(error);
+            logger.error(error);
             res.status(500).json({
                 error: 'Something went wrong'
             });
@@ -63,7 +64,7 @@ export const postLogin = async (req, res, next) => {
             token: token
         });
     } catch (error) {
-        console.log(error);
+        logger.error(error);
         res.status(500).json({
             error: 'Something went wrong'
         });
