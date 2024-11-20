@@ -12,7 +12,7 @@ export const postRegister = async (req, res, next) => {
             password: hashedPassword
         });
         await user.save();
-        const token = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h'});
+        const token = jwt.sign({ userId: user._id }, 'daniel', { expiresIn: '1h'});
 
         res.status(201).json({
             user: {
@@ -22,7 +22,17 @@ export const postRegister = async (req, res, next) => {
             token: token
         });
     } catch (error) {
-        console.log(error);
+        // TODO: put the error codes somewhere else as constants
+        if (error.code === 11000) {
+            res.status(400).json({
+                error: 'Email already in use. Please choose a different email address'
+            });
+        } else {
+            console.log(error);
+            res.status(500).json({
+                error: 'Something went wrong'
+            });
+        }
     }
 };
 
@@ -44,7 +54,7 @@ export const postLogin = async (req, res, next) => {
             });
         }
 
-        const token = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h'});
+        const token = jwt.sign({ userId: user._id }, 'daniel', { expiresIn: '1h'});
         res.json({
             user: {
                 id: user._id,
@@ -54,5 +64,8 @@ export const postLogin = async (req, res, next) => {
         });
     } catch (error) {
         console.log(error);
+        res.status(500).json({
+            error: 'Something went wrong'
+        });
     }
 };
