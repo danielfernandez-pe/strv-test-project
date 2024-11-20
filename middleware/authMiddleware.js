@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-function verifyToken(req, res, next) {
+export const verifyToken = (req, res, next) => {
     const token = req.header('Authorization');
     const extractedToken = token.split(' ')[1];
 
@@ -17,9 +17,7 @@ function verifyToken(req, res, next) {
     } catch (error) {
         console.log(error);
         res.status(401).json({
-            error: 'Invalid token2'
+            error: 'Invalid token'
         });
     }
-}
-
-export default verifyToken;
+};
