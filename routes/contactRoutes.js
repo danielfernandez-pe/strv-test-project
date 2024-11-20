@@ -4,6 +4,8 @@ import verifyToken from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.post('/add-contact', verifyToken, contactController.postAddContact);
+router.post('/contacts', verifyToken, contactController.postContact);
+router.put('/contacts/:id', verifyToken, contactController.putContact);
+router.delete('/contacts/:id', verifyToken, contactController.deleteContact);
 
 export default router;
