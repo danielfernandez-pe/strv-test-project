@@ -1,4 +1,5 @@
 import { getFirestore } from 'firebase-admin/firestore';
+import logger from '../utils/logger.js';
 
 export const postContact = async (req, res, next) => {
     const { name, lastName, phone, address } = req.body;

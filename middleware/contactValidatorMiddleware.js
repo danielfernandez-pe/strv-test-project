@@ -8,9 +8,11 @@ export const validateRequestFields = (requiredFields) => (req, res, next) => {
     });
 
     if (errors.length > 0) {
-        res.status(400).json({
+        return res.status(400).json({
             message: 'Missing field',
             errors: errors
         });
     }
+
+    next();
 };
