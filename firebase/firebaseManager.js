@@ -1,14 +1,16 @@
 import admin from 'firebase-admin';
-import fs from 'fs';
-import path from 'path';
 
 function initializeFirebase() {
-  const serviceAccountPath = path.resolve('service-account-file.json');  
-  const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
+  const serviceAccountBase64 = process.env.GOOGLE_SERVICE_ACCOUNT_BASE64;
 
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-  });
+  if (serviceAccountBase64) {
+    const serviceAccountContent = Buffer.from(serviceAccountBase64, 'base64').toString('utf-8');
+    admin.initializeApp({
+      credential: admin.credential.cert(JSON.parse(serviceAccountContent))
+    });
+  } else {
+    throw new Error('Service account for Firebase not setup properly');
+  }
 }
 
 export default initializeFirebase;
