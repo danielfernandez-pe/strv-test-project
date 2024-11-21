@@ -1,8 +1,8 @@
 import express from 'express';
 import connectMongo from './database/mongoManager.js';
 import initializeFirebase from './firebase/firebaseManager.js';
-import authRoutes from './routes/authRoutes.js';
-import contactRoutes from './routes/contactRoutes.js';
+import authRoutes from './src/authentication/presentation/routes/authRoutes.js';
+import contactRoutes from './src/contacts/presentation/routes/contactRoutes.js';
 import logger from './utils/logger.js';
 
 const PORT = process.env.PORT || 3000;

@@ -1,19 +1,16 @@
-import User from '../models/user.js';
-import jwt from 'jsonwebtoken';
-import argon2 from 'argon2';
-import logger from '../utils/logger.js';
+import { createUser, findUser } from '../../data/repositories/authRepository.js';
+import { hashPassword, isPasswordValid } from '../useCases/hashPasswordUseCase.js';
+import { createToken } from '../useCases/createTokenUseCase.js';
+import logger from '../../../../utils/logger.js';
 
 export const postRegister = async (req, res, next) => {
     const { email, password } = req.body;
-    const hashedPassword = await argon2.hash(password);
+    const hashedPassword = await hashPassword(password);
     
+    // I need an interface to depend on so domain doesn't depend on data. Typescript?
     try {
-        const user = new User({
-            email: email,
-            password: hashedPassword
-        });
-        await user.save();
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_KEY, { expiresIn: '1h'});
+        const user = createUser(email, hashedPassword);
+        const token = createToken(user._id);
 
         res.status(201).json({
             user: {
@@ -39,7 +36,7 @@ export const postRegister = async (req, res, next) => {
 
 export const postLogin = async (req, res, next) => {
     const { email, password } = req.body;
-    const user = await User.findOne({ email })
+    const user = await findUser(email);
 
     if (!user) {
         return res.status(404).json({
@@ -48,14 +45,15 @@ export const postLogin = async (req, res, next) => {
     }
 
     try {
-        const isPasswordValid = await argon2.verify(user.password, password);
-        if (!isPasswordValid) {
+        const passwordMatched = await isPasswordValid(user.password, password);
+        
+        if (!passwordMatched) {
             return res.status(401).json({
                 error: 'Incorrect password'
             });
         }
 
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_KEY, { expiresIn: '1h'});
+        const token = createToken(user._id);
         res.json({
             user: {
                 id: user._id,
