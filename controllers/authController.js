@@ -13,7 +13,7 @@ export const postRegister = async (req, res, next) => {
             password: hashedPassword
         });
         await user.save();
-        const token = jwt.sign({ userId: user._id }, 'daniel', { expiresIn: '1h'});
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_KEY, { expiresIn: '1h'});
 
         res.status(201).json({
             user: {
@@ -55,7 +55,7 @@ export const postLogin = async (req, res, next) => {
             });
         }
 
-        const token = jwt.sign({ userId: user._id }, 'daniel', { expiresIn: '1h'});
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_KEY, { expiresIn: '1h'});
         res.json({
             user: {
                 id: user._id,

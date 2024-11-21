@@ -5,7 +5,7 @@ import authRoutes from './routes/authRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import logger from './utils/logger.js';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
