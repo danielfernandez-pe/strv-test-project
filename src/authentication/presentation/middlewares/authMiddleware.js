@@ -1,4 +1,3 @@
-import jwt from 'jsonwebtoken';
 import { verifyToken } from '../../domain/useCases/manageTokenUseCase.js';
 import logger from '../../../../utils/logger.js';
 

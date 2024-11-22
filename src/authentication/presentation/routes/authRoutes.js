@@ -5,7 +5,7 @@ import { clientResponses } from '../strings/clientResponses.js';
 
 const router = express.Router();
 
-router.post('/auth/signUp',async  (req, res) => {
+router.post('/auth/signUp', async  (req, res) => {
     const { email, password } = req.body;
 
     try {
