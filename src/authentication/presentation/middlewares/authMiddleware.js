@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
+import { verifyToken } from '../../domain/useCases/manageTokenUseCase.js';
 import logger from '../../../../utils/logger.js';
 
-export const verifyToken = (req, res, next) => {
+export const verifyRequest = (req, res, next) => {
     const token = req.header('Authorization');
     const extractedToken = token.split(' ')[1];
 
@@ -12,8 +13,7 @@ export const verifyToken = (req, res, next) => {
     }
 
     try {
-        // TODO: use use case
-        const decoded = jwt.verify(extractedToken, process.env.JWT_KEY);
+        const decoded = verifyToken(extractedToken);
         req.userId = decoded.userId;
         next();
     } catch (error) {

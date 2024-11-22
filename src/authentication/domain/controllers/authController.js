@@ -1,70 +1,33 @@
 import { createUser, findUser } from '../../data/repositories/authRepository.js';
-import { hashPassword, isPasswordValid } from '../useCases/hashPasswordUseCase.js';
-import { createToken } from '../useCases/createTokenUseCase.js';
-import logger from '../../../../utils/logger.js';
+import { hashPassword, isPasswordValid } from '../useCases/managePasswordUseCase.js';
+import { createToken } from '../useCases/manageTokenUseCase.js';
+import { authErrors } from '../errors/authErrors.js';
 
-export const postRegister = async (req, res, next) => {
-    const { email, password } = req.body;
+export const postRegister = async (email, password) => {
     const hashedPassword = await hashPassword(password);
     
     // I need an interface to depend on so domain doesn't depend on data. Typescript?
-    try {
-        const user = createUser(email, hashedPassword);
-        const token = createToken(user._id);
-
-        res.status(201).json({
-            user: {
-                id: user._id,
-                email: email,
-            },
-            token: token
-        });
-    } catch (error) {
-        // TODO: put the error codes somewhere else as constants
-        if (error.code === 11000) {
-            res.status(400).json({
-                error: 'Email already in use. Please choose a different email address'
-            });
-        } else {
-            logger.error(error);
-            res.status(500).json({
-                error: 'Something went wrong'
-            });
-        }
-    }
+    const user = await createUser(email, hashedPassword);
+    const token = createToken(user._id);
+    return { user, token };
 };
 
-export const postLogin = async (req, res, next) => {
-    const { email, password } = req.body;
+export const postLogin = async (email, password) => {
     const user = await findUser(email);
 
     if (!user) {
-        return res.status(404).json({
-            error: 'User not found'
-        });
+        const error = new Error('User not found');
+        error.code = authErrors.USER_NOT_FOUND;
+        throw error;
     }
 
-    try {
-        const passwordMatched = await isPasswordValid(user.password, password);
-        
-        if (!passwordMatched) {
-            return res.status(401).json({
-                error: 'Incorrect password'
-            });
-        }
-
-        const token = createToken(user._id);
-        res.json({
-            user: {
-                id: user._id,
-                email: email,
-            },
-            token: token
-        });
-    } catch (error) {
-        logger.error(error);
-        res.status(500).json({
-            error: 'Something went wrong'
-        });
+    const passwordMatched = await isPasswordValid(user.password, password);
+    if (!passwordMatched) {
+        const error = new Error('Incorrect password');
+        error.code = authErrors.INCORRECT_PASSWORD;
+        throw error;
     }
+
+    const token = createToken(user._id);
+    return { user, token };
 };
