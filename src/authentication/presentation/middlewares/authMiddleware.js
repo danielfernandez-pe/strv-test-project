@@ -12,6 +12,7 @@ export const verifyToken = (req, res, next) => {
     }
 
     try {
+        // TODO: use use case
         const decoded = jwt.verify(extractedToken, process.env.JWT_KEY);
         req.userId = decoded.userId;
         next();
