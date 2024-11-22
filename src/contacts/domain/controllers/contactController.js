@@ -1,70 +1,26 @@
-
-import logger from '../../../../utils/logger.js';
 import Contact from '../../data/models/contact.js'
 import * as contactRepository from '../../data/repositories/contactRepository.js'
+import { contactErrors } from '../errors/contactErrors.js';
 
-export const postContact = async (req, res, next) => {
-    const { name, lastName, phone, address } = req.body;
+export const postContact = async (userId, name, lastName, phone, address) => {
     const contactId = `${name.toLowerCase()}-${lastName.toLowerCase()}`;
     const newContact = new Contact(name, lastName, phone, address);
+    const contactExists = await contactRepository.contactExists(userId, contactId);
 
-    try {
-        const contactExists = await contactRepository.contactExists(req.userId, contactId);
-
-        if (contactExists) {
-            res.status(400).json({ 
-                message: 'Contact already exists. Use PUT Http method to update contact' 
-            });
-        } else {
-            console.log(newContact);
-            await contactRepository.saveContact(req.userId, contactId, newContact);
-        
-            res.status(201).json({
-                message: 'Contact added!',
-                contactId: contactId
-            });
-        }
-    } catch(error) {
-        logger.error(error);
-        res.status(500).json({ 
-            message: 'Failed to add contact' 
-        });
+    if (contactExists) {
+        const error = new Error('Contact already exists');
+        error.code = contactErrors.CONTACT_ALREADY_EXISTS;
+        throw error;
+    } else {
+        await contactRepository.saveContact(userId, contactId, newContact);
+        return contactId;
     }
 };
 
-export const putContact = async (req, res, next) => {
-    const { contactId } = req.params;
-    const { phone, address } = req.body;
-
-    try {
-        await contactRepository.updateContact(req.userId, contactId, phone, address);
-        
-        res.status(200).json({
-            message: 'Contact updated!',
-            contactId: contactId
-        });
-    } catch(error) {
-        logger.error(error);
-        res.status(500).json({ 
-            message: 'Failed to update contact' 
-        });
-    }
+export const putContact = async (userId, contactId, phone, address) => {
+    await contactRepository.updateContact(userId, contactId, phone, address);
 };
 
-export const deleteContact = async (req, res, next) => {
-    const { contactId } = req.params;
-
-    try {
-        await contactRepository.deleteContact(req.userId, contactId);
-
-        res.status(200).json({
-            message: 'Contact deleted!',
-            contactId: contactId
-        });
-    } catch(error) {
-        logger.error(error);
-        res.status(500).json({ 
-            message: 'Failed to delete contact' 
-        });
-    }
+export const deleteContact = async (userId, contactId) => {
+    await contactRepository.deleteContact(userId, contactId);
 };
