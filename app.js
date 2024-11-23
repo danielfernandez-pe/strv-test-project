@@ -1,6 +1,6 @@
 import express from 'express';
-import connectMongo from './init/mongoManager.js';
-import initializeFirebase from './init/firebaseManager.js';
+import initMongo from './init/mongoInit.js';
+import initFirebase from './init/firebaseInit.js';
 import authRoutes from './src/authentication/presentation/routes/authRoutes.js';
 import contactRoutes from './src/contacts/presentation/routes/contactRoutes.js';
 import logger from './utils/logger.js';
@@ -15,8 +15,8 @@ app.use(authRoutes);
 app.use(contactRoutes);
 
 try {
-    await connectMongo();
-    initializeFirebase();
+    await initMongo();
+    initFirebase();
     app.listen(PORT, () => {
         logger.info(`Server running on port ${PORT}`);
     })
