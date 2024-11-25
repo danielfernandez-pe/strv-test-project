@@ -1,5 +1,5 @@
 import { User } from '../models/user';
-import { UserDOM } from '../../domain/models/userDOM';
+import UserDOM from '../../domain/models/userDOM';
 import AuthRepositoryType from '../../domain/repositories/authRepositoryType';
 
 export default class AuthRepository implements AuthRepositoryType {

@@ -1,6 +1,6 @@
 import AuthRepositoryType from '../repositories/authRepositoryType';
 import CustomError from '../../../../utils/customError';
-import { UserDOM } from '../models/userDOM';
+import UserDOM from '../models/userDOM';
 import { hashPassword, isPasswordValid } from '../useCases/managePasswordUseCase';
 import { createToken } from '../useCases/manageTokenUseCase';
 import { authErrors } from '../errors/authErrors';

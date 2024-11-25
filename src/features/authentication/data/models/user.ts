@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { UserDOM } from '../../domain/models/userDOM';
+import UserDOM from '../../domain/models/userDOM';
 
 const UserSchema: Schema<UserDOM> = new mongoose.Schema({
     email: {

@@ -1,5 +1,5 @@
 {
-  "date": "2024-11-25T11:41:13.122Z",
+  "date": "2024-11-25T12:01:07.819Z",
   "argv": [
     "/Users/danielfernandezyopla/.nvm/versions/node/v23.2.0/bin/node",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/tests/authRoute.test.ts"
@@ -10,12 +10,12 @@
     "--enable-source-maps",
     "--import=file:///Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/processinfo/dist/esm/import.mjs"
   ],
-  "NODE_OPTIONS": "\"--import=file:///Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/processinfo/dist/esm/import.mjs\"",
+  "NODE_OPTIONS": "\"\" \"--require\" \"/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/node-preload/preload-path/node-preload.js\" \"--import=file:///Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/processinfo/dist/esm/import.mjs\" --require /Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/node-preload/preload-path/node-preload.js",
   "cwd": "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project",
-  "pid": 42299,
-  "ppid": 42298,
+  "pid": 43629,
+  "ppid": 43627,
   "parent": null,
-  "uuid": "e3614c6c-ba73-49d0-92a6-ba3a9aae655c",
+  "uuid": "5eb4343a-2aed-4d1a-afb2-f189a759a6d7",
   "files": [
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/tests/authRoute.test.ts",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import.mjs",
@@ -33,29 +33,29 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/stack/dist/esm/require-resolve.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-all-conditional-values.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-all-conditions.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-all-exports.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-conditional-value.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-import.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/is-windows.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/stack/dist/esm/parse.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-conditional-values-list.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/errors.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/file-exists.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-dependency-export.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-package-import.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-file-url.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-path.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-conditional-values-list.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-named-exports-list.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/read-pkg.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-export.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/star-glob.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-path.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/file-exists.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/find-dep-package.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-file-url.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-dependency-export.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-package-import.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/read-json.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/find-star-match.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/walk-up-path/dist/esm/index.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/find-star-match.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/read-json.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/glob.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/has-magic.js",
@@ -64,13 +64,13 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/ast.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/escape.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/unescape.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/pattern.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/walker.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/brace-expressions.js",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/minipass/dist/esm/index.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/processor.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/brace-expressions.js",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/mock/dist/esm/loader.mjs",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/mock/dist/esm/hooks.mjs",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/mock/dist/esm/mock-service-client.js",
@@ -78,7 +78,9 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/utils/logger.ts",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/utils/customError.ts",
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/domain/errors/authErrors.ts",
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/presentation/strings/clientResponses.ts"
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/presentation/strings/clientResponses.ts",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/tests/mocks/mockAuthController.ts",
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/src/features/authentication/tests/mocks/mockUser.ts"
   ],
   "sources": {
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/mock/dist/esm/import.mjs": [
@@ -120,11 +122,11 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-all-conditions.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-all-conditions.ts"
     ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-unique-condition-sets.ts"
-    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-all-exports.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-all-exports.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-unique-condition-sets.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-all-local-imports.ts"
@@ -141,11 +143,26 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/stack/dist/esm/parse.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/@tapjs/stack/src/parse.ts"
     ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-conditional-values-list.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-conditional-values-list.ts"
-    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/errors.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/errors.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/file-exists.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/file-exists.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-dependency-export.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-dependency-export.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-package-import.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-package-import.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-file-url.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/to-file-url.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-path.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/to-path.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-conditional-values-list.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-conditional-values-list.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/get-named-exports-list.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/get-named-exports-list.ts"
@@ -159,35 +176,20 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/star-glob.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/star-glob.ts"
     ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-path.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/to-path.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/file-exists.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/file-exists.ts"
-    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/find-dep-package.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/find-dep-package.ts"
     ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/to-file-url.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/to-file-url.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-dependency-export.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-dependency-export.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/resolve-package-import.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/resolve-package-import.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/read-json.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/read-json.ts"
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/walk-up-path/dist/esm/index.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/walk-up-path/src/index.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/find-star-match.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/find-star-match.ts"
     ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/dist/esm/read-json.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/resolve-import/src/read-json.ts"
+    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/index.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/src/index.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/walk-up-path/dist/esm/index.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/walk-up-path/src/index.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/index.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/src/index.ts"
@@ -213,31 +215,34 @@
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/unescape.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/src/unescape.ts"
     ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/dist/esm/index.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/src/index.ts"
-    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/pattern.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/src/pattern.ts"
     ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/dist/esm/index.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/src/index.ts"
+    ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/walker.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/src/walker.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/brace-expressions.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/src/brace-expressions.ts"
+    ],
+    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js": [
+      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/src/index.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/minipass/dist/esm/index.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/minipass/src/index.ts"
     ],
     "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/dist/esm/processor.js": [
       "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/src/processor.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/path-scurry/node_modules/lru-cache/src/index.ts"
-    ],
-    "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/dist/esm/brace-expressions.js": [
-      "/Users/danielfernandezyopla/Documents/javascript/nodeJS/jobs/strv/test-project/node_modules/glob/node_modules/minimatch/src/brace-expressions.ts"
     ]
   },
-  "root": "e3614c6c-ba73-49d0-92a6-ba3a9aae655c",
+  "root": "5eb4343a-2aed-4d1a-afb2-f189a759a6d7",
   "externalID": "src/features/authentication/tests/authRoute.test.ts",
   "code": 0,
   "signal": null,
-  "runtime": 411.723375
+  "runtime": 1107.05125,
+  "globalsAdded": [
+    "__coverage__"
+  ]
 }

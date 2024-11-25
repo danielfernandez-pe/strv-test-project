@@ -1,4 +1,4 @@
-import { UserDOM } from "../models/userDOM";
+import UserDOM from "../models/userDOM";
 
 export default interface AuthRepositoryType {
     createUser(email: string, password: string): Promise<UserDOM>;
