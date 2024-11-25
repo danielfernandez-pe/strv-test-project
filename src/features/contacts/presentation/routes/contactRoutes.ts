@@ -43,6 +43,8 @@ export default class ContactRoutes {
         const { name, lastName, phone, address } = req.body;
         try {
             const contactId = await this.contactController.postContact(res.locals.userId, name, lastName, phone, address);
+            logger.info(`User ${res.locals.userId} created contact successfully`);
+
             res.status(201).json({
                 message: clientResponses.CONTACT_CREATE_SUCCESS,
                 contactId: contactId 
@@ -50,6 +52,7 @@ export default class ContactRoutes {
         } catch (error) {
             const customError = error as CustomError;
             if (customError.code === contactErrors.CONTACT_ALREADY_EXISTS) {
+                logger.error(`User ${res.locals.userId} couldn't add contact because it already exists`);
                 res.status(400).json({ 
                     message: clientResponses.CONTACT_CREATE_ERROR_ALREADY_EXISTS
                 });
@@ -68,6 +71,7 @@ export default class ContactRoutes {
 
         try {
             await this.contactController.putContact(res.locals.userId, contactId, phone, address);
+            logger.info(`User ${res.locals.userId} updated contact successfully`);
 
             res.status(200).json({
                 message: clientResponses.CONTACT_UPDATE_SUCCESS,
@@ -76,6 +80,7 @@ export default class ContactRoutes {
         } catch (error) {
             const customError = error as CustomError;
             if (customError.code === contactErrors.CONTACT_NOT_FOUND) {
+                logger.error(`User ${res.locals.userId} couldn't update contact because is not in the database`);
                 return res.status(404).json({ 
                     message: clientResponses.CONTACT_NOT_FOUND
                 });
@@ -92,6 +97,7 @@ export default class ContactRoutes {
         const { contactId } = req.params;
         try {
             await this.contactController.deleteContact(res.locals.userId, contactId);
+            logger.info(`User ${res.locals.userId} deleted contact successfully`);
 
             res.status(200).json({
                 message: clientResponses.CONTACT_DELETE_SUCCESS,
@@ -100,6 +106,7 @@ export default class ContactRoutes {
         } catch (error) {
             const customError = error as CustomError;
             if (customError.code === contactErrors.CONTACT_NOT_FOUND) {
+                logger.error(`User ${res.locals.userId} couldn't update contact because is not in the database`);
                 return res.status(404).json({ 
                     message: clientResponses.CONTACT_NOT_FOUND
                 });

@@ -62,10 +62,25 @@ As requested, this application allows users to authenticate and add contacts to 
 
 ## Testing
 
+To test manually the app you could use the collections inside `postman-collections` to import into Postman and start testing the functionality of the app manually.
+
+1. Click on File in the menu
+2. Import
+3. Drag the .json files
+4. Select the `prod` environment
+5. Have fun!
+
 To run the unit tests, execute the following command:
 ```bash
 npm test
 ```
+
+## Next steps
+
+Some of the things I'd like to improve are the following:
+
+- Add Swagger docs. I added a postman collection so it's easy to understand how to interact with the API but Swagger is a standard and would be easier for most users.
+- Improve the CI to run tests before deploying the prod. Use Github Actions for this and not rely entirely on Railway
 
 ## License
 

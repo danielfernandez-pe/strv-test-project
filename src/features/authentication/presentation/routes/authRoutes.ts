@@ -28,8 +28,11 @@ export default class AuthRoutes {
 
     private async signUp(req: Request, res: Response, next: NextFunction) {
         const { email, password } = req.body;
+        logger.info(`Registering a user with email ${email}`);
+
         try {
             const response = await this.authController.postRegister(email, password);
+            logger.info(`User with id: ${response.user._id} created successfully`);
     
             res.status(201).json({
                 user: {
@@ -41,6 +44,7 @@ export default class AuthRoutes {
         } catch (error) {
             const customError = error as CustomError;
             if (customError.code === authErrors.EMAIL_IN_USE) {
+                logger.error(`Request to create the user failed because email is already in use: ${email}`);
                 return res.status(400).json({
                     error: clientResponses.AUTH_EMAIL_ALREADY_EXISTS
                 });
@@ -55,9 +59,12 @@ export default class AuthRoutes {
 
     private async login(req: Request, res: Response, next: NextFunction) {
         const { email, password } = req.body;
+        logger.info(`Logging in a user with email ${email}`);
     
         try {
             const response = await this.authController.postLogin(email, password);
+            logger.info(`User with id: ${response.user._id} logged in successfully`);
+
             res.json({
                 user: {
                     id: response.user._id,
@@ -68,12 +75,14 @@ export default class AuthRoutes {
         } catch (error) {
             const customError = error as CustomError;
             if (customError.code === authErrors.USER_NOT_FOUND) {
+                logger.error(`Request to logged in the user failed because can't find the user with email ${email} in the database`);
                 return res.status(404).json({
                     error: clientResponses.ERROR_USER_NOT_FOUND
                 });
             }
 
             if (customError.code === authErrors.INCORRECT_PASSWORD) {
+                logger.error(`Request to logged in the user failed because password is incorrect`);
                 return res.status(401).json({
                     error: clientResponses.ERROR_INCORRECT_PASSWORD
                 });
