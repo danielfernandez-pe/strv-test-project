@@ -1,12 +1,18 @@
-import Contact from '../../data/models/contact'
-import ContactRepository from '../../data/repositories/contactRepository';
+import Contact from '../models/contact'
+import ContactRepositoryType from '../repositories/contactRepositoryType';
 import CustomError from '../../../../utils/customError';
 import { contactErrors } from '../errors/contactErrors';
 
-export default class ContactController {
-    contactRepository: ContactRepository;
+export interface ContactControllerType {
+    postContact(userId: string, name: string, lastName: string, phone: string, address: string): Promise<string>
+    putContact(userId: string, contactId: string, phone: string, address: string): void
+    deleteContact(userId: string, contactId: string): void
+}
 
-    constructor(contactRepository: ContactRepository) {
+export class ContactController implements ContactControllerType {
+    contactRepository: ContactRepositoryType;
+
+    constructor(contactRepository: ContactRepositoryType) {
         this.contactRepository = contactRepository;
     }
 

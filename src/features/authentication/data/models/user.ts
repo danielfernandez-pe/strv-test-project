@@ -1,12 +1,7 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
+import { UserDOM } from '../../domain/models/userDOM';
 
-export interface UserType extends Document {
-    _id: string;
-    email: string;
-    password: string;
-}
-
-const UserSchema: Schema<UserType> = new mongoose.Schema({
+const UserSchema: Schema<UserDOM> = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
@@ -18,4 +13,4 @@ const UserSchema: Schema<UserType> = new mongoose.Schema({
     }
 });
 
-export const User: Model<UserType> = mongoose.model<UserType>('User', UserSchema);
+export const User: Model<UserDOM> = mongoose.model<UserDOM>('User', UserSchema);

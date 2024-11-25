@@ -1,25 +1,30 @@
-import AuthRepository from '../../data/repositories/authRepository';
+import AuthRepositoryType from '../repositories/authRepositoryType';
 import CustomError from '../../../../utils/customError';
-import { UserType } from '../../data/models/user';
+import { UserDOM } from '../models/userDOM';
 import { hashPassword, isPasswordValid } from '../useCases/managePasswordUseCase';
 import { createToken } from '../useCases/manageTokenUseCase';
 import { authErrors } from '../errors/authErrors';
 
-export default class AuthController {
-    authRepository: AuthRepository
+export interface AuthControllerType {
+    postRegister(email: string, password: string): Promise<{ user: UserDOM, token: string}>
+    postLogin(email: string, password: string): Promise<{ user: UserDOM, token: string}>
+}
 
-    constructor(authRepository: AuthRepository) {
+export class AuthController implements AuthControllerType {
+    authRepository: AuthRepositoryType
+
+    constructor(authRepository: AuthRepositoryType) {
         this.authRepository = authRepository
     }
 
-    async postRegister(email: string, password: string): Promise<{ user: UserType, token: string}> {
+    async postRegister(email: string, password: string): Promise<{ user: UserDOM, token: string}> {
         const hashedPassword = await hashPassword(password);
         const user = await this.authRepository.createUser(email, hashedPassword);
         const token = createToken(user._id);
         return { user, token };
     }
 
-    async postLogin(email: string, password: string): Promise<{ user: UserType, token: string}> {
+    async postLogin(email: string, password: string): Promise<{ user: UserDOM, token: string}> {
         const user = await this.authRepository.findUser(email);
 
         if (!user) {
@@ -35,5 +40,5 @@ export default class AuthController {
 
         const token = createToken(user._id);
         return { user, token };
-        }
+    }
 }

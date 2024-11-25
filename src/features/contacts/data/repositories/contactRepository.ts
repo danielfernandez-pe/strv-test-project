@@ -1,9 +1,10 @@
 import { getFirestore, DocumentReference } from 'firebase-admin/firestore';
-import { contactErrors } from '../../domain/errors/contactErrors';
-import Contact from '../models/contact';
+import Contact from '../../domain/models/contact';
 import CustomError from '../../../../utils/customError';
+import ContactRepositoryType from '../../domain/repositories/contactRepositoryType';
+import { contactErrors } from '../../domain/errors/contactErrors';
 
-export default class ContactRepository {
+export default class ContactRepository implements ContactRepositoryType {
     private userCollection = 'users';
     private contactCollection = 'contacts';
 

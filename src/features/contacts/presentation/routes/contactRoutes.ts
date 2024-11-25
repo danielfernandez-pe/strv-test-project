@@ -1,8 +1,8 @@
 
 import express, { Request, Response, NextFunction } from 'express';
-import ContactController from '../../domain/controllers/contactController';
 import logger from '../../../../utils/logger';
 import CustomError from '../../../../utils/customError';
+import { ContactControllerType } from '../../domain/controllers/contactController';
 import { validateRequestFields } from '../middlewares/contactValidatorMiddleware';
 import { verifyRequest } from '../../../authentication/presentation/middlewares/authMiddleware';
 import { contactErrors } from '../../domain/errors/contactErrors';
@@ -10,9 +10,9 @@ import { clientResponses } from '../strings/clientResponses';
 
 export default class ContactRoutes {
     public router = express.Router();
-    contactController: ContactController;
+    contactController: ContactControllerType;
 
-    constructor(contactController: ContactController) {
+    constructor(contactController: ContactControllerType) {
         this.contactController = contactController
         this.initializeRoutes();
     }

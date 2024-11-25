@@ -1,15 +1,15 @@
 import express, { Request, Response, NextFunction } from 'express';
-import AuthController from '../../domain/controllers/authController';
 import logger from '../../../../utils/logger';
 import CustomError from '../../../../utils/customError';
 import { authErrors } from '../../domain/errors/authErrors';
 import { clientResponses } from '../strings/clientResponses';
+import { AuthControllerType } from '../../domain/controllers/authController';
 
 export default class AuthRoutes {
     public router = express.Router();
-    authController: AuthController;
+    authController: AuthControllerType;
 
-    constructor(authController: AuthController) {
+    constructor(authController: AuthControllerType) {
         this.authController = authController;
         this.initializeRoutes();
     }

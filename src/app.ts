@@ -2,12 +2,12 @@ import express from 'express';
 import initMongo from './init/mongoInit';
 import initFirebase from './init/firebaseInit';
 import ContactRepository from './features/contacts/data/repositories/contactRepository';
-import ContactController from './features/contacts/domain/controllers/contactController';
 import ContactRoutes from './features/contacts/presentation/routes/contactRoutes';
 import AuthRepository from './features/authentication/data/repositories/authRepository';
-import AuthController from './features/authentication/domain/controllers/authController';
 import AuthRoutes from './features/authentication/presentation/routes/authRoutes';
 import logger from './utils/logger';
+import { ContactController } from './features/contacts/domain/controllers/contactController';
+import { AuthController } from './features/authentication/domain/controllers/authController';
 
 import dotenv from 'dotenv';
 dotenv.config();
