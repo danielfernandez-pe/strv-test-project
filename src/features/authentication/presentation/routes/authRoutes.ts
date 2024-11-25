@@ -39,12 +39,11 @@ export default class AuthRoutes {
                 token: response.token
             });
         } catch (error) {
-            if (error instanceof CustomError) {
-                if (error.code === authErrors.EMAIL_IN_USE) {
-                    return res.status(400).json({
-                        error: clientResponses.AUTH_EMAIL_ALREADY_EXISTS
-                    });
-                }
+            const customError = error as CustomError;
+            if (customError.code === authErrors.EMAIL_IN_USE) {
+                return res.status(400).json({
+                    error: clientResponses.AUTH_EMAIL_ALREADY_EXISTS
+                });
             }
             
             logger.error(error);
@@ -67,18 +66,17 @@ export default class AuthRoutes {
                 token: response.token
             });
         } catch (error) {
-            if (error instanceof CustomError) {
-                if (error.code === authErrors.USER_NOT_FOUND) {
-                    return res.status(404).json({
-                        error: clientResponses.ERROR_USER_NOT_FOUND
-                    });
-                }
-    
-                if (error.code === authErrors.INCORRECT_PASSWORD) {
-                    return res.status(401).json({
-                        error: clientResponses.ERROR_INCORRECT_PASSWORD
-                    });
-                }
+            const customError = error as CustomError;
+            if (customError.code === authErrors.USER_NOT_FOUND) {
+                return res.status(404).json({
+                    error: clientResponses.ERROR_USER_NOT_FOUND
+                });
+            }
+
+            if (customError.code === authErrors.INCORRECT_PASSWORD) {
+                return res.status(401).json({
+                    error: clientResponses.ERROR_INCORRECT_PASSWORD
+                });
             }
 
             logger.error(error);

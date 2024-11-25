@@ -48,12 +48,11 @@ export default class ContactRoutes {
                 contactId: contactId 
             });
         } catch (error) {
-            if (error instanceof CustomError) {
-                if (error.code === contactErrors.CONTACT_ALREADY_EXISTS) {
-                    res.status(400).json({ 
-                        message: clientResponses.CONTACT_CREATE_ERROR_ALREADY_EXISTS
-                    });
-                }
+            const customError = error as CustomError;
+            if (customError.code === contactErrors.CONTACT_ALREADY_EXISTS) {
+                res.status(400).json({ 
+                    message: clientResponses.CONTACT_CREATE_ERROR_ALREADY_EXISTS
+                });
             }
 
             logger.error(error);
@@ -75,12 +74,11 @@ export default class ContactRoutes {
                 contactId: contactId
             });
         } catch (error) {
-            if (error instanceof CustomError) {
-                if (error.code === contactErrors.CONTACT_NOT_FOUND) {
-                    return res.status(404).json({ 
-                        message: clientResponses.CONTACT_NOT_FOUND
-                    });
-                }
+            const customError = error as CustomError;
+            if (customError.code === contactErrors.CONTACT_NOT_FOUND) {
+                return res.status(404).json({ 
+                    message: clientResponses.CONTACT_NOT_FOUND
+                });
             }
 
             logger.error(error);
@@ -100,12 +98,11 @@ export default class ContactRoutes {
                 contactId: contactId
             });
         } catch (error) {
-            if (error instanceof CustomError) {
-                if (error.code === contactErrors.CONTACT_NOT_FOUND) {
-                    return res.status(404).json({ 
-                        message: clientResponses.CONTACT_NOT_FOUND
-                    });
-                }
+            const customError = error as CustomError;
+            if (customError.code === contactErrors.CONTACT_NOT_FOUND) {
+                return res.status(404).json({ 
+                    message: clientResponses.CONTACT_NOT_FOUND
+                });
             }
 
             logger.error(error);
