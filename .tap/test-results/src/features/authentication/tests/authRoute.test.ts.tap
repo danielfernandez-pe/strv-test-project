@@ -4,48 +4,48 @@ TAP version 14
     ok 2 - Response body should match the expected result
     ok 3 - postRegister should have been called once
     1..3
-ok 1 - POST /auth/signUp Successful # time=18.344ms
+ok 1 - POST /auth/signUp Successful # time=15.713ms
 
 # Subtest: POST /auth/signUp Duplicate email
     ok 1 - Response status should be 400
     ok 2 - Correct error message
     ok 3 - postRegister should have been called once
     1..3
-ok 2 - POST /auth/signUp Duplicate email # time=2.537ms
+ok 2 - POST /auth/signUp Duplicate email # time=2.508ms
 
 # Subtest: POST /auth/signUp Generic error
     ok 1 - Response status should be 500
     ok 2 - Correct error message
     ok 3 - postRegister should have been called once
     1..3
-ok 3 - POST /auth/signUp Generic error # time=1.539ms
+ok 3 - POST /auth/signUp Generic error # time=1.609ms
 
 # Subtest: POST /auth/login Successful
     ok 1 - Response status should be 200
     ok 2 - Response body should match the expected result
     ok 3 - postLogin should have been called once
     1..3
-ok 4 - POST /auth/login Successful # time=1.883ms
+ok 4 - POST /auth/login Successful # time=2.257ms
 
 # Subtest: POST /auth/login User not found
     ok 1 - Response status should be 404
     ok 2 - Correct error message
     ok 3 - postLogin should have been called once
     1..3
-ok 5 - POST /auth/login User not found # time=3.092ms
+ok 5 - POST /auth/login User not found # time=2.03ms
 
 # Subtest: POST /auth/login Incorrect password
     ok 1 - Response status should be 401
     ok 2 - Correct error message
     ok 3 - postLogin should have been called once
     1..3
-ok 6 - POST /auth/login Incorrect password # time=1.49ms
+ok 6 - POST /auth/login Incorrect password # time=1.246ms
 
 # Subtest: POST /auth/login Generic error
     ok 1 - Response status should be 500
     ok 2 - Correct error message
     ok 3 - postLogin should have been called once
     1..3
-ok 7 - POST /auth/login Generic error # time=1.194ms
+ok 7 - POST /auth/login Generic error # time=1.158ms
 
 1..7
