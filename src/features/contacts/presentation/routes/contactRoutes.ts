@@ -48,11 +48,13 @@ export default class ContactRoutes {
                 contactId: contactId 
             });
         } catch (error) {
-            // if (error.code === contactErrors.CONTACT_ALREADY_EXISTS) {
-            //     res.status(400).json({ 
-            //         message: clientResponses.CONTACT_CREATE_ERROR_ALREADY_EXISTS
-            //     });
-            // }
+            if (error instanceof CustomError) {
+                if (error.code === contactErrors.CONTACT_ALREADY_EXISTS) {
+                    res.status(400).json({ 
+                        message: clientResponses.CONTACT_CREATE_ERROR_ALREADY_EXISTS
+                    });
+                }
+            }
 
             logger.error(error);
             res.status(500).json({ 
@@ -73,11 +75,13 @@ export default class ContactRoutes {
                 contactId: contactId
             });
         } catch (error) {
-            // if (error.code === contactErrors.CONTACT_NOT_FOUND) {
-            //     return res.status(404).json({ 
-            //         message: clientResponses.CONTACT_NOT_FOUND
-            //     });
-            // }
+            if (error instanceof CustomError) {
+                if (error.code === contactErrors.CONTACT_NOT_FOUND) {
+                    return res.status(404).json({ 
+                        message: clientResponses.CONTACT_NOT_FOUND
+                    });
+                }
+            }
 
             logger.error(error);
             res.status(500).json({ 
@@ -96,11 +100,13 @@ export default class ContactRoutes {
                 contactId: contactId
             });
         } catch (error) {
-            // if (error.code === contactErrors.CONTACT_NOT_FOUND) {
-            //     return res.status(404).json({ 
-            //         message: clientResponses.CONTACT_NOT_FOUND
-            //     });
-            // }
+            if (error instanceof CustomError) {
+                if (error.code === contactErrors.CONTACT_NOT_FOUND) {
+                    return res.status(404).json({ 
+                        message: clientResponses.CONTACT_NOT_FOUND
+                    });
+                }
+            }
 
             logger.error(error);
             res.status(500).json({ 

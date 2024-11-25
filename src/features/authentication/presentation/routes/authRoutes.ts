@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import AuthController from '../../domain/controllers/authController';
 import { authErrors } from '../../domain/errors/authErrors';
+import CustomError from '../../../../utils/customError';
 import { clientResponses } from '../strings/clientResponses';
 import logger from '../../../../utils/logger';
 
@@ -38,11 +39,13 @@ export default class AuthRoutes {
                 token: response.token
             });
         } catch (error) {
-            // if (error.code === authErrors.EMAIL_IN_USE) {
-            //     return res.status(400).json({
-            //         error: clientResponses.AUTH_EMAIL_ALREADY_EXISTS
-            //     });
-            // }
+            if (error instanceof CustomError) {
+                if (error.code === authErrors.EMAIL_IN_USE) {
+                    return res.status(400).json({
+                        error: clientResponses.AUTH_EMAIL_ALREADY_EXISTS
+                    });
+                }
+            }
             
             logger.error(error);
             res.status(500).json({
@@ -64,17 +67,19 @@ export default class AuthRoutes {
                 token: response.token
             });
         } catch (error) {
-            // if (error.code === authErrors.USER_NOT_FOUND) {
-            //     return res.status(404).json({
-            //         error: clientResponses.ERROR_USER_NOT_FOUND
-            //     });
-            // }
-
-            // if (error.code === authErrors.INCORRECT_PASSWORD) {
-            //     return res.status(401).json({
-            //         error: clientResponses.ERROR_INCORRECT_PASSWORD
-            //     });
-            // }
+            if (error instanceof CustomError) {
+                if (error.code === authErrors.USER_NOT_FOUND) {
+                    return res.status(404).json({
+                        error: clientResponses.ERROR_USER_NOT_FOUND
+                    });
+                }
+    
+                if (error.code === authErrors.INCORRECT_PASSWORD) {
+                    return res.status(401).json({
+                        error: clientResponses.ERROR_INCORRECT_PASSWORD
+                    });
+                }
+            }
 
             logger.error(error);
             res.status(500).json({
