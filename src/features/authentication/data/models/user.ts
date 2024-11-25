@@ -14,3 +14,4 @@ const UserSchema: Schema<UserDOM> = new mongoose.Schema({
 });
 
 export const User: Model<UserDOM> = mongoose.model<UserDOM>('User', UserSchema);
+User.createIndexes();
