@@ -4,10 +4,10 @@ import CustomError from '../../../../utils/customError';
 import { contactErrors } from '../errors/contactErrors';
 
 export default class ContactController {
-    contactRepository: ContactRepository
+    contactRepository: ContactRepository;
 
     constructor(contactRepository: ContactRepository) {
-        this.contactRepository = contactRepository
+        this.contactRepository = contactRepository;
     }
 
     async postContact(userId: string, name: string, lastName: string, phone: string, address: string): Promise<string> {

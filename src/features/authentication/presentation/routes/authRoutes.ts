@@ -1,9 +1,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 import AuthController from '../../domain/controllers/authController';
-import { authErrors } from '../../domain/errors/authErrors';
-import CustomError from '../../../../utils/customError';
-import { clientResponses } from '../strings/clientResponses';
 import logger from '../../../../utils/logger';
+import CustomError from '../../../../utils/customError';
+import { authErrors } from '../../domain/errors/authErrors';
+import { clientResponses } from '../strings/clientResponses';
 
 export default class AuthRoutes {
     public router = express.Router();
@@ -18,12 +18,12 @@ export default class AuthRoutes {
         this.router.post(
             '/auth/signUp',
             (req: Request, res: Response, next: NextFunction) => this.signUp(req, res, next)
-        )
+        );
         
         this.router.post(
             '/auth/login',
             (req: Request, res: Response, next: NextFunction) => this.login(req, res, next)
-        )
+        );
     }
 
     private async signUp(req: Request, res: Response, next: NextFunction) {

@@ -1,13 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
-import { verifyToken } from '../../domain/useCases/manageTokenUseCase';
 import logger from '../../../../utils/logger';
+import { verifyToken } from '../../domain/useCases/manageTokenUseCase';
+import { clientResponses } from '../strings/clientResponses';
 
 export const verifyRequest = (req: Request, res: Response, next: NextFunction) => {
     const token = req.header('Authorization');
 
     if (!token) {
         return res.status(401).json({
-            error: 'Access denied'
+            error: clientResponses.ACCESS_DENIED
         });
     }
 
@@ -20,7 +21,7 @@ export const verifyRequest = (req: Request, res: Response, next: NextFunction) =
     } catch (error) {
         logger.error(error);
         res.status(401).json({
-            error: 'Invalid token'
+            error: clientResponses.ACCESS_DENIED
         });
     }
 };

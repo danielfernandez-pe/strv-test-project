@@ -1,9 +1,9 @@
 import AuthRepository from '../../data/repositories/authRepository';
+import CustomError from '../../../../utils/customError';
 import { UserType } from '../../data/models/user';
 import { hashPassword, isPasswordValid } from '../useCases/managePasswordUseCase';
 import { createToken } from '../useCases/manageTokenUseCase';
 import { authErrors } from '../errors/authErrors';
-import CustomError from '../../../../utils/customError';
 
 export default class AuthController {
     authRepository: AuthRepository

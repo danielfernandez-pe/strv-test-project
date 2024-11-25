@@ -1,44 +1,28 @@
-import { getFirestore } from 'firebase-admin/firestore';
+import { getFirestore, DocumentReference } from 'firebase-admin/firestore';
 import { contactErrors } from '../../domain/errors/contactErrors';
 import Contact from '../models/contact';
 import CustomError from '../../../../utils/customError';
 
 export default class ContactRepository {
-    async contactExists(userId: string, contactId: string): Promise<boolean> {
-        const db = getFirestore();
-        const docRef = db
-            .collection('users')
-            .doc(userId)
-            .collection('contacts')
-            .doc(contactId);
+    private userCollection = 'users';
+    private contactCollection = 'contacts';
 
-        const doc = await docRef.get();
+    async contactExists(userId: string, contactId: string): Promise<boolean> {
+        const doc = await this.getDocRef(userId, contactId).get();
         return doc.exists;    
     }
 
     async saveContact(userId: string, contactId: string, contact: Contact) {
-        const db = getFirestore();
-        const docRef = db
-            .collection('users')
-            .doc(userId)
-            .collection('contacts')
-            .doc(contactId);
-        
+        const docRef = this.getDocRef(userId, contactId)
         await docRef.set(contact.toObject());
     }
 
     async updateContact(userId: string, contactId: string, phone: string, address: string) {
-        const db = getFirestore();
         const updatedContact = {
             phone: phone,
             address: address
         }
-        const docRef = db
-            .collection('users')
-            .doc(userId)
-            .collection('contacts')
-            .doc(contactId);
-    
+        const docRef = this.getDocRef(userId, contactId)
         await docRef.update(updatedContact);
     }
 
@@ -46,17 +30,21 @@ export default class ContactRepository {
         const docExists = await this.contactExists(userId, contactId);
 
         if (docExists) {
-            const db = getFirestore();
-            const docRef = db
-                .collection('users')
-                .doc(userId)
-                .collection('contacts')
-                .doc(contactId);
-    
+            const docRef = this.getDocRef(userId, contactId)
             await docRef.delete();
         } else {
             const error = new CustomError(contactErrors.CONTACT_NOT_FOUND);
             throw error;
         }
+    }
+
+    private getDocRef(userId: string, contactId: string): DocumentReference {
+        const db = getFirestore();
+        const docRef = db
+            .collection(this.userCollection)
+            .doc(userId)
+            .collection(this.contactCollection)
+            .doc(contactId);
+        return docRef;
     }
 }
