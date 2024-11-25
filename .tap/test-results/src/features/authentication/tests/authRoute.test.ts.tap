@@ -1,0 +1,16 @@
+TAP version 14
+# Subtest: POST /auth/signUp successful registration
+    ok 1 - Response status should be 201
+    ok 2 - Response body should match the expected result
+    ok 3 - postRegister should have been called once
+    1..3
+ok 1 - POST /auth/signUp successful registration # time=13.311ms
+
+# Subtest: POST /auth/signUp duplicate email
+    ok 1 - Response status should be 400
+    ok 2 - Correct error message
+    ok 3 - postRegister should have been called once
+    1..3
+ok 2 - POST /auth/signUp duplicate email # time=2.55ms
+
+1..2
