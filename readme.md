@@ -28,8 +28,8 @@ As requested, this application allows users to authenticate and add contacts to 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo-name.git
-    cd your-repo-name
+    git clone git@github.com:danielfcodes/strv-test-project.git
+    cd strv-test-project
     ```
 
 2. Install the dependencies:
