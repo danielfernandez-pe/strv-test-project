@@ -14,8 +14,9 @@ As requested, this application allows users to authenticate and add contacts to 
 2. [Description](#description)
 3. [Running Locally](#running-locally)
 4. [Testing](#testing)
-5. [License](#license)
-6. [Authors](#authors)
+5. [Next steps](#next-steps)
+6. [License](#license)
+7. [Authors](#authors)
 
 ## Running Locally
 
@@ -23,6 +24,7 @@ As requested, this application allows users to authenticate and add contacts to 
 
 - Node.js (version 23.2.0 or higher)
 - npm (version 10.9.0 or higher)
+- Nodemon installed globally `npm install -g nodemon`
 
 ### Steps to run locally:
 
