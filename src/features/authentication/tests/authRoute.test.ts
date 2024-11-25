@@ -1,4 +1,3 @@
-
 import tap from 'tap';
 import sinon from 'sinon';
 import request from 'supertest';

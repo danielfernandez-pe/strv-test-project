@@ -4,9 +4,10 @@
   "description": "Test project for STRV",
   "main": "app.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node app.js",
     "test": "nyc tap",
-    "dev": "nodemon --watch src --exec ts-node src/app.ts",
-    "start": "node app.js"
+    "dev": "nodemon --watch src --exec ts-node src/app.ts"
   },
   "repository": {
     "type": "git",
