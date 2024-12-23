@@ -1,8 +1,8 @@
-# STRV Test Project
+# Test Project
 
 ## Introduction
 
-This is a demo project created for the STRV interview process.
+This is a demo project
 
 ## Description
 
@@ -30,8 +30,8 @@ As requested, this application allows users to authenticate and add contacts to 
 
 1. Clone the repository:
     ```bash
-    git clone git@github.com:danielfcodes/strv-test-project.git
-    cd strv-test-project
+    git clone git@github.com:danielfcodes/node-test-project.git
+    cd node-test-project
     ```
 
 2. Install the dependencies:
